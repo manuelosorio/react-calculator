@@ -1,43 +1,38 @@
-import React, { ComponentProps } from "react"
+import { ComponentProps } from "react"
+import PropTypes from "prop-types";
 import { Button } from "../button/button";
-import { Operator } from "../operator/operator";
 import "./button-wrapper.sass"
+import { Actions } from "../../helper/actions";
 
 
-export function ButtonWrapper (_props: ComponentProps<any>){
+export function ButtonWrapper (props: ComponentProps<any>){
   return (
     <div className="button-wrapper">
-      <div className="sub-grid span-3">
-        <Button num={7}/>
-        <Button num={8}/>
-        <Button num={9}/>
-
-        <Button num={4}/>
-        <Button num={5}/>
-        <Button num={6}/>
-
-        <Button num={1}/>
-        <Button num={2}/>
-        <Button num={3}/>
-      </div>
-      <div className="sub-grid span-1">
-        <Operator op="DEL"/>
-        <Operator op="+"/>
-        <Operator op="-"/>
-      </div>
       <div className="sub-grid span-4">
-        <Operator op="."/>
-        <Button  num={0}/>
-        <Operator op="/"/>
-        <Operator op="X"/>
+        <Button handleClick={props.handleClick} num={7}/>
+        <Button handleClick={props.handleClick} num={8}/>
+        <Button handleClick={props.handleClick} num={9}/>
+        <Button handleClick={props.handleClick} op="DEL" action={Actions.DELETE}/>
+        <Button handleClick={props.handleClick} num={4}/>
+        <Button handleClick={props.handleClick} num={5}/>
+        <Button handleClick={props.handleClick} num={6}/>
+        <Button handleClick={props.handleClick} op="+" action={Actions.ADD}/>
+        <Button handleClick={props.handleClick} num={1}/>
+        <Button handleClick={props.handleClick} num={2}/>
+        <Button handleClick={props.handleClick} num={3}/>
+        <Button handleClick={props.handleClick} op="-" action={Actions.SUBTRACT}/>
+        <Button handleClick={props.handleClick} op="."/>
+        <Button handleClick={props.handleClick} num={0}/>
+        <Button handleClick={props.handleClick} op="/" action={Actions.DIVIDE}/>
+        <Button handleClick={props.handleClick} op="X" action={Actions.MULTIPLY}/>
       </div>
       <div className="sub-grid span-4 child-span-2" >
-        <Operator op={"Reset"}/>
-        <Operator op={"="}/>
+        <Button handleClick={props.handleClick} op={"Reset"} action={Actions.CLEAR}/>
+        <Button handleClick={props.handleClick} op={"="} action={Actions.TOTAL}/>
       </div>
     </div>
   );
 }
-ButtonWrapper.style= {
-  background: "palegoldenrod"
+ButtonWrapper.propTypes = {
+  handleClick: PropTypes.func
 }

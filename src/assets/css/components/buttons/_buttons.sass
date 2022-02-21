@@ -1,0 +1,12 @@
+@use "../../variables"
+.button
+  border: none
+  border-radius: 5px
+  background: variables.$t1-keys--background-grey
+  box-shadow: 0 5px variables.$t1-keys--shadow-grey
+  padding: 1rem
+  color: variables.$t1-text--dark
+  transition: 150ms cubic-bezier(0.5, 0, 0.75, 0)
+  &:active
+    box-shadow: 0 1px variables.$t1-keys--shadow-grey
+    transform: translateY(5px)

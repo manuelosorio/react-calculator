@@ -1,32 +1,32 @@
-@use "src/assets/css/vars"
+@use "../../assets/css/variables"
 .button-wrapper
   display: grid
   grid:
     template-columns: repeat(4, 1fr)
     column: span 4
   grid-gap: 25px
-  background: vars.$t1-bg--toggle
+  background: variables.$t1-bg--toggle
   padding: 32px
   border-radius: 5px
-.sub-grid
-  display: grid
-  grid-gap: 25px
-[class*="sub-grid"]
-  button
+  .sub-grid
+    display: grid
+    grid-gap: 25px
+  [class*="sub-grid"]
+    button
+      grid-column: span 1
+  .span-1
     grid-column: span 1
-.span-1
-  grid-column: span 1
-  grid-gap: 25px
-.span-2
-  grid-column: span 2
-  grid-gap: 25px
-.span-3
-  grid-column: span 3
-  grid-template-columns: repeat(3, 1fr)
-.span-4
-  grid-column: span 4
-  grid-template-columns: repeat(4, 1fr)
-.child-span-2
-  button
+    grid-gap: 25px
+  .span-2
     grid-column: span 2
+    grid-gap: 25px
+  .span-3
+    grid-column: span 3
+    grid-template-columns: repeat(3, 1fr)
+  .span-4
+    grid-column: span 4
+    grid-template-columns: repeat(4, 1fr)
+  .child-span-2
+    button
+      grid-column: span 2
 

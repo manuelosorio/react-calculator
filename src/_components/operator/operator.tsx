@@ -4,10 +4,13 @@ import PropTypes from "prop-types";
 export function Operator (props: ComponentProps<any>) {
   return (
     <>
-      <button>{props.op}</button>
+      <button onClick={
+        props.handleClick(props)
+      }>{props.op}</button>
     </>
   )
 }
 Operator.propTypes = {
-  op: PropTypes.string.isRequired
+  op: PropTypes.string.isRequired,
+  handleClick: PropTypes.func
 }

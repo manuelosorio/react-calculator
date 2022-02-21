@@ -1,10 +1,17 @@
 import "./calculator-display.sass"
 import { ComponentProps } from "react";
+import PropTypes from "prop-types";
 
 export function CalculatorDisplay(props: ComponentProps<any>) {
   return (
     <div className="calculator-display">
-      <span style={{padding: "0 1rem"}}>{props.state}</span>
+      <span style={{padding: "0 1rem"}}>{props.state.num || props.state.res }</span>
     </div>
   );
+}
+CalculatorDisplay.propType = {
+  state: {
+    num: PropTypes.number,
+    res: PropTypes.any
+  }
 }

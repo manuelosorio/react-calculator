@@ -1,13 +1,19 @@
-import React, { ComponentProps } from "react";
+import { ComponentProps } from "react";
 import PropTypes from "prop-types";
 import './button.sass'
-export function Button (props: ComponentProps<any>) {
+import { Actions } from "../../helper/actions";
+export function Button ({num, op, action, handleClick}: ComponentProps<any>) {
   return (
     <>
-      <button onClick={() => {console.log(props.num)}} style={{ background: props.color }}>{props.num}</button>
+      <button className="button" onClick={() => {
+        handleClick(num || op || 0, action)
+      }}>{num ||op || 0}</button>
     </>
   );
 }
 Button.propTypes = {
-  num: PropTypes.number
+  num: PropTypes.number,
+  op: PropTypes.string,
+  action: PropTypes.number || Actions,
+  handleClick: PropTypes.func
 }
