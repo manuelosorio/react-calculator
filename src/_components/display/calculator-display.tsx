@@ -1,7 +1,6 @@
 import "./calculator-display.sass"
 import { ComponentProps } from "react";
 import PropTypes from "prop-types";
-import { Theme } from "../../helper/theme"
 
 export function CalculatorDisplay(props: ComponentProps<any>) {
   return (

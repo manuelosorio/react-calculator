@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ButtonWrapper } from "./_components/button-wrapper/button-wrapper";
 import { CalculatorDisplay } from "./_components/display/calculator-display";
 import './App.sass';
@@ -8,8 +8,6 @@ import { ThemeChanger } from "./_components/theme-changer/theme-changer";
 function App() {
   const  [displayState, setDisplayState] = useState(0);
   const [resultState, setResultState] = useState(0);
-
-  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "default")
 
   const clickHandler = (r: num | operator, action?: Actions) => {
     switch (action) {
@@ -107,7 +105,7 @@ function App() {
         <ThemeChanger/>
       </section>
       <div className="calculator">
-        <CalculatorDisplay state={{num: displayState, res: resultState}} theme={theme}/>
+        <CalculatorDisplay state={{num: displayState, res: resultState}}/>
         <ButtonWrapper handleClick={clickHandler}/>
       </div>
     </main>
