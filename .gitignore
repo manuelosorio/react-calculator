@@ -35,6 +35,8 @@ speed-measure-plugin*.json
 *.launch
 .settings/
 *.sublime-workspace
+ssl/*.cert
+ssl/*.key
 
 # IDE - VSCode
 .vscode/*

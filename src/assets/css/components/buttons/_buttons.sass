@@ -2,11 +2,40 @@
 .button
   border: none
   border-radius: 5px
-  background: variables.$t1-keys--background-grey
-  box-shadow: 0 5px variables.$t1-keys--shadow-grey
+  background: variables.$keys--background
+  box-shadow: 0 5px variables.$keys--shadow
   padding: 1rem
-  color: variables.$t1-text--dark
+  color: variables.$text--dark
   transition: 150ms cubic-bezier(0.5, 0, 0.75, 0)
   &:active
-    box-shadow: 0 1px variables.$t1-keys--shadow-grey
+    box-shadow: 0 1px variables.$keys--shadow
     transform: translateY(5px)
+  &--primary
+    @extend .button
+    background: variables.$keys--background
+    box-shadow: 0 5px variables.$keys--shadow
+    &:active
+      box-shadow: 0 1px variables.$keys--shadow
+      transform: translateY(5px)
+  &--secondary
+    @extend .button
+    background: variables.$keys--background-secondary
+    box-shadow: 0 5px variables.$keys--shadow-secondary
+    color: variables.$text--light
+    &:active
+      box-shadow: 0 1px variables.$keys--shadow-secondary
+      transform: translateY(5px)
+  &--tertiary
+    @extend .button
+    background: variables.$keys--background-tertiary
+    box-shadow: 0 5px variables.$keys--shadow-tertiary
+    color: variables.$text--light
+    &:active
+      box-shadow: 0 1px variables.$keys--shadow-secondary
+      transform: translateY(5px)
+.theme--dark
+  .button
+    &--primary
+      color: variables.$text--light
+    &--tertiary
+      color: variables.$text--dark

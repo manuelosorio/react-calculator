@@ -10,6 +10,52 @@
     *
 
 /* You can add global styles to this file, and also import other style files */
+\:root
+  --bg-primary: hsl(222, 26%, 31%)
+  --bg-toggle: hsl(223, 31%, 20%)
+  --bg-screen: hsl(224, 36%, 15%)
+
+  --keys-bg:  hsl(30, 25%, 89%)
+  --keys-shadow: hsl(28, 16%, 65%)
+  --keys-bg--secondary: hsl(225, 21%, 49%)
+  --keys-shadow--secondary: hsl(224, 28%, 35%)
+  --keys-bg--tertiary: hsl(6, 63%, 50%)
+  --keys-shadow--tertiary: hsl(6, 70%, 34%)
+
+  --text-dark: hsl(221, 14%, 31%)
+  --text-screen: hsl(0, 0%, 100%)
+  --text-light: hsl(0, 0%, 100%)
+.theme--light
+  --bg-primary: hsl(0, 0%, 90%)
+  --bg-toggle: hsl(0, 5%, 81%)
+  --bg-screen: hsl(0, 0%, 93%)
+
+  --keys-bg:  hsl(45, 7%, 89%)
+  --secondary: hsl(35, 11%, 61%)
+  --keys-bg--secondary: hsl(185, 42%, 37%)
+  --keys-shadow--keys-shadow: hsl(185, 58%, 25%)
+  --keys-bg--tertiary: hsl(25, 98%, 40%)
+  --keys-shadow--tertiary: hsl(25, 99%, 27%)
+
+  --text-dark: hsl(60, 10%, 19%)
+  --text-screen: hsl(60, 10%, 19%)
+  --text-light: hsl(0, 0%, 100%)
+.theme--dark
+  --bg-primary: hsl(268, 75%, 9%)
+  --bg-toggle: hsl(268, 71%, 12%)
+  --bg-screen: hsl(268, 71%, 12%)
+
+  --keys-bg: hsl(268, 47%, 21%)
+  --keys-shadow: hsl(290, 70%, 36%)
+
+  --keys-bg--secondary: hsl(281, 89%, 26%)
+  --keys-shadow--secondary: hsl(285, 91%, 52%)
+  --keys-bg--tertiary:  hsl(176, 100%, 44%)
+  --keys-shadow--tertiary: hsl(177, 92%, 70%)
+
+  --text-dark: hsl(60, 10%, 19%)
+  --text-screen: hsl(52, 100%, 62%)
+  --text-light: hsl(0, 0%, 100%)
 *
   box-sizing: border-box
   font-weight: 700
@@ -18,7 +64,7 @@
 html
   font-size: 100%
 body
-  background: $t1-bg--primary
+  background: $bg--primary
   font: 700 1rem/1 'Spartan', sans-serif
 main
   display: flex
@@ -27,6 +73,14 @@ main
   justify-content: center
   height: 100vh
 
+section
+  color: white
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  width: 98%
+  max-width: 389px
+  align-items: center
 /*----------------------  End Base  ----------------------
 
 

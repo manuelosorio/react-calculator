@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ButtonWrapper } from "./_components/button-wrapper/button-wrapper";
 import { CalculatorDisplay } from "./_components/display/calculator-display";
 import './App.sass';
 import { Actions } from "./helper/actions";
+import { ThemeChanger } from "./_components/theme-changer/theme-changer";
 
 function App() {
   const  [displayState, setDisplayState] = useState(0);
   const [resultState, setResultState] = useState(0);
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "default")
 
   const clickHandler = (r: num | operator, action?: Actions) => {
     switch (action) {
@@ -60,21 +63,21 @@ function App() {
       }
       case (Actions.TOTAL): {
         setResultState((_prev) => {
-          // const regex = /[Xx\-+*/]/g;
+          const regex = /[Xx\-+*/]/g;
           const prevState: Array<string | "+" | "-"  | "X" | "/"> = displayState.toString().split('');
           for (let i = 0; prevState.length > i; i++) {
             if (prevState[i] === "X") {
               prevState[i] = "*"
             }
           }
-          try {
-            // eslint-disable-next-line no-eval
-            const calcVal = eval(prevState.join('')).toString();
-            setDisplayState(calcVal)
-            return calcVal;
-          } catch (e) {
+          if (regex.test(prevState[prevState.length-1])) {
             setDisplayState(displayState);
+            return 0;
           }
+          // eslint-disable-next-line no-eval
+          const calcVal = eval(prevState.join('')).toString();
+          setDisplayState(calcVal)
+          return calcVal;
         });
 
         break;
@@ -96,10 +99,15 @@ function App() {
       }
     }
   }
+
   return (
     <main>
+      <section>
+        <h1>calc</h1>
+        <ThemeChanger/>
+      </section>
       <div className="calculator">
-        <CalculatorDisplay state={{num: displayState, res: resultState}} />
+        <CalculatorDisplay state={{num: displayState, res: resultState}} theme={theme}/>
         <ButtonWrapper handleClick={clickHandler}/>
       </div>
     </main>
