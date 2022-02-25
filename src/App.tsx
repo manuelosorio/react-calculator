@@ -102,7 +102,7 @@ function App() {
 
   return (
     <main>
-      <section>
+      <section className="header">
         <h1>calc</h1>
         <ThemeChanger/>
       </section>

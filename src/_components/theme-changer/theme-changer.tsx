@@ -26,12 +26,12 @@ export function ThemeChanger(props: ComponentProps<any>) {
     width: "15%",
     flexDirection: "row",
     alignContent: "center",
-    alignItems: "center",
+    alignItems: "flex-end",
 }
 
   return (
     <div style={fix}>
-      <span>Theme&nbsp;&nbsp;&nbsp;</span>
+      <span>Theme</span>
       <Slider
         min={0}
         max={2}
