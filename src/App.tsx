@@ -87,8 +87,10 @@ function App() {
         }
         setDisplayState((prev): any => {
           const arr: any[] = [];
+          const regex = /[Xx\-+/]/g;
           arr.push(prev, r)
-          const containsDecimal = prev.toString().includes('.');
+          const prevArr = prev.toString().split(regex);
+          const containsDecimal = prevArr[prevArr.length - 1].includes('.');
           if (r === '.' && containsDecimal) {
             arr[arr.length - 1] = ''
           }
