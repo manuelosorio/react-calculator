@@ -2,7 +2,7 @@ import { ComponentProps, CSSProperties, HTMLAttributes, useEffect, useState } fr
 import { Slider } from "../slider/slider";
 import { Theme } from "../../helper/theme";
 
-export function ThemeChanger(props: ComponentProps<any>) {
+export function ThemeChanger(_props: ComponentProps<any>) {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? Theme.DEFAULT)
   const handleChange = (e: any) => {
     return setTheme((): any => {
@@ -27,8 +27,7 @@ export function ThemeChanger(props: ComponentProps<any>) {
     flexDirection: "row",
     alignContent: "center",
     alignItems: "flex-end",
-}
-
+  }
   return (
     <div style={fix}>
       <span>Theme</span>

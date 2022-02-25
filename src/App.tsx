@@ -29,7 +29,6 @@ function App() {
             return arr.slice(0, -1).join('')
           })
         }
-
         break;
       }
       case(Actions.ADD):
@@ -99,7 +98,6 @@ function App() {
       }
     }
   }
-
   return (
     <main>
       <section className="header">
@@ -113,7 +111,6 @@ function App() {
     </main>
   );
 }
-
 export default App;
 type operator =  "." | "+" | "-"  | "X" | "/" | "DEL" | "Reset";
 type num = Number | 0;
